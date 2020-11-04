@@ -1,0 +1,63 @@
+{
+  "kind": "tasks#taskLists",
+  "items": [
+    {
+      "kind": "tasks#tasks",
+      "id": "",
+      "title": "My Tasks",
+      "updated": "2020-10-10T03:46:42.098751Z",
+      "items": [
+        {
+          "due": "2020-10-10T03:00:00Z",
+          "kind": "tasks#task",
+          "id": "ASDASDASDWEQWEQWEQWE",
+          "title": "Task Number One",
+          "task_type": "PERSONAL_TASK",
+          "updated": "2020-10-10T03:46:42.098751Z",
+          "selfLink": "",
+          "status": "needsAction"
+        },
+        {
+          "due": "2020-10-10T03:00:00Z",
+          "kind": "tasks#task",
+          "id": "ASDASDASDWEQWEQWEQWE",
+          "title": "Task Number Two",
+          "task_type": "PERSONAL_TASK",
+          "updated": "2020-10-10T03:46:42.098751Z",
+          "selfLink": "",
+          "status": "needsAction"
+        }
+      ],
+      "selfLink": ""
+    },
+    {
+      "kind": "tasks#tasks",
+      "id": "",
+      "title": "My Tasks Secondary List",
+      "updated": "2020-10-10T03:46:42.098751Z",
+      "items": [
+        {
+          "due": "2020-10-10T03:00:00Z",
+          "kind": "tasks#task",
+          "id": "ASDASDASDWEQWEQWEQWE",
+          "title": "Task Number One",
+          "task_type": "PERSONAL_TASK",
+          "updated": "2020-10-10T03:46:42.098751Z",
+          "selfLink": "",
+          "status": "needsAction"
+        },
+        {
+          "due": "2020-10-10T03:00:00Z",
+          "kind": "tasks#task",
+          "id": "ASDASDASDWEQWEQWEQWE",
+          "title": "Task Number Two",
+          "task_type": "PERSONAL_TASK",
+          "updated": "2020-10-10T03:46:42.098751Z",
+          "selfLink": "",
+          "status": "needsAction"
+        }
+      ],
+      "selfLink": ""
+    }
+  ]
+}
