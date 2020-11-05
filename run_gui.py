@@ -3,6 +3,26 @@ import gtjt
 import tkinter as tk
 from tkinter import filedialog, Text
 import os.path
+import sys
+  
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+
+def getOutputDirectory():
+  #Creates OutputDirectory
+  out_directory = "output"
+  os.makedirs(resource_path(out_directory), exist_ok=True)
+  return resource_path(out_directory)
+
 
 app = { 
   'title':"ConvertFile - Google Taks JSON to TXT",
@@ -13,14 +33,15 @@ app = {
   'font_color':"#ffffff",
   'font':["Helvetica", 16],
   'button_color':"#686d76",
-  'output_directory':'Output'
+  'output_directory': getOutputDirectory()
 }
 
 root = tk.Tk()
 root.title(app['title'])
-root.iconbitmap(default='icon.ico')
+root.iconbitmap(resource_path('icon.ico'))
 gtask_file = tk.StringVar()
 gtask_file.set("<not selected>")
+
 
 
 def printOutput(string,append=True):
@@ -34,7 +55,7 @@ def printOutput(string,append=True):
 def buttonConvertFile_click(file):
     if os.path.isfile(file):
       printOutput('Processing Files ...')
-      if gtjt.ConvertFile(file):
+      if gtjt.ConvertFile(file,app['output_directory']):
         printOutput('Done.')
         printOutput('The lists have been extracted to the default Output directory')
       else:
@@ -99,5 +120,7 @@ buttonConvertFile.pack(side="right",padx=1,pady=1)
 buttonOpenFile.pack(side="right",padx=1,pady=1)
 
 printOutput("To begin, please select the Google Tasks JSON file obtained trough Google TakeOut")
+
+
 root.mainloop()
 
