@@ -3,3 +3,4 @@ output/*.txt
 .vscode
 init.bat
 __pycache__
+releases
